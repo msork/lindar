@@ -98,7 +98,12 @@ mod tests {
         let display = DisplayInfo {
             id: "display-1".to_owned(),
             name: "Main display".to_owned(),
-            geometry: DisplayGeometry { x: -10, y: 0, width: 1920, height: 1080 },
+            geometry: DisplayGeometry {
+                x: -10,
+                y: 0,
+                width: 1920,
+                height: 1080,
+            },
             primary: true,
         };
         assert_eq!(info.id.to_string(), "node-a");
@@ -106,4 +111,3 @@ mod tests {
         assert!(display.primary);
     }
 }
-

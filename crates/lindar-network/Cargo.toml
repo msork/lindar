@@ -8,6 +8,6 @@ rust-version.workspace = true
 [dependencies]
 lindar-core = { path = "../lindar-core" }
 lindar-protocol = { path = "../lindar-protocol" }
+mdns-sd.workspace = true
 thiserror.workspace = true
 tokio.workspace = true
-

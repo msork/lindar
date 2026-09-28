@@ -7,7 +7,8 @@ rust-version.workspace = true
 
 [dependencies]
 lindar-core = { path = "../../crates/lindar-core" }
+lindar-network = { path = "../../crates/lindar-network" }
+lindar-protocol = { path = "../../crates/lindar-protocol" }
 tokio.workspace = true
 tracing.workspace = true
 tracing-subscriber.workspace = true
-

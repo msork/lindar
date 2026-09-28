@@ -15,7 +15,7 @@ rust-version = "1.75"
 [workspace.dependencies]
 serde = { version = "1", features = ["derive"] }
 thiserror = "1"
-tokio = { version = "1", features = ["macros", "rt-multi-thread", "signal"] }
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "signal", "sync"] }
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }
-
+mdns-sd = "0.13.10"
