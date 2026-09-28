@@ -1,0 +1,13 @@
+[package]
+name = "lindar-network"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+lindar-core = { path = "../lindar-core" }
+lindar-protocol = { path = "../lindar-protocol" }
+thiserror.workspace = true
+tokio.workspace = true
+
