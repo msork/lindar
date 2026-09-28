@@ -1,4 +1,5 @@
-use lindar_core::{NodeId, NodeInfo, OperatingSystem};
+mod identity;
+
 use lindar_network::{Discovery, PeerEvent};
 use lindar_protocol::DEFAULT_LISTENING_PORT;
 use tracing::info;
@@ -12,12 +13,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         )
         .init();
 
-    let hostname = std::env::var("HOSTNAME").unwrap_or_else(|_| "unknown".to_owned());
-    let node = NodeInfo {
-        id: NodeId::new(hostname.clone()),
-        hostname,
-        operating_system: OperatingSystem::current(),
-    };
+    let node = identity::node_info()?;
 
     info!(
         node_id = %node.id,

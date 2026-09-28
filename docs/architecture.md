@@ -17,12 +17,18 @@ Wayland, or macOS API integration.
   with mDNS. It validates required TXT metadata and protocol compatibility,
   filters its own node ID, and maintains an in-memory table with discovered,
   updated, and lost events. mDNS expiry and goodbye records remove peers.
-- `lindard` is the daemon executable. It reports its node identity, initializes
-  tracing, starts discovery, logs peer lifecycle changes, and waits for Ctrl+C.
+- `lindard` is the daemon executable. Before discovery, it detects the system
+  hostname and loads or creates a persistent UUID v4 node ID. Linux stores the
+  ID under `$XDG_STATE_HOME/lindar` (or `~/.local/state/lindar`); macOS stores it
+  under `~/Library/Application Support/Lindar`. A malformed stored identity is
+  reported as an error instead of being silently replaced. The daemon then
+  initializes tracing, starts discovery, logs peer lifecycle changes, and
+  waits for Ctrl+C.
 
-`mdns-sd` provides DNS-SD advertisement and browsing. Tokio supplies async event
-handling and daemon signal handling. `tracing` is used for structured logs, and
-`thiserror` provides typed discovery startup errors.
+`gethostname` retrieves the host name across Linux and macOS, and `uuid` creates
+random version 4 node identifiers. `mdns-sd` provides DNS-SD advertisement and
+browsing. Tokio supplies async event handling and daemon signal handling.
+`tracing` is used for structured logs, and `thiserror` provides typed errors.
 
 ## Dependency direction
 

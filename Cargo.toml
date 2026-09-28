@@ -19,3 +19,5 @@ tokio = { version = "1", features = ["macros", "rt-multi-thread", "signal", "syn
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }
 mdns-sd = "0.13.10"
+gethostname = "1"
+uuid = { version = "1", features = ["v4"] }

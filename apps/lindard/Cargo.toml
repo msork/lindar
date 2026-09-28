@@ -9,6 +9,12 @@ rust-version.workspace = true
 lindar-core = { path = "../../crates/lindar-core" }
 lindar-network = { path = "../../crates/lindar-network" }
 lindar-protocol = { path = "../../crates/lindar-protocol" }
+gethostname.workspace = true
 tokio.workspace = true
 tracing.workspace = true
 tracing-subscriber.workspace = true
+thiserror.workspace = true
+uuid.workspace = true
+
+[dev-dependencies]
+tempfile = "3"
